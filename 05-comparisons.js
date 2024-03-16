@@ -26,6 +26,10 @@
 // '===' means that both value and type should match
 // '!==' means that both value and type should not match
 
-console.log(3 === '3'); //false because one of them is string other is number so they are different types hence false
+// console.log(3 === '3'); //false because one of them is string other is number so they are different types hence false
 
-console.log('Hello' === 'Hello'); //true because both values and types same
+// console.log('Hello' === 'Hello'); //true because both values and types same
+
+let biggi = 1234567890987654n;
+
+console.log(typeof biggi);
