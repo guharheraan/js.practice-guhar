@@ -55,7 +55,15 @@
 // console.log(typeof no2check);
 // console.log(typeof no3check);
 
-// let new = 13;
+let something = 13;
 
-// let old = new + "15";
-// console.log(old);
+let old = something + '15';
+
+console.log(typeof old);
+
+let x = 5 + '2' + 4;
+console.log(x);
+
+let y = '3' + 4 + 4;
+console.log(y);
+console.log(typeof x, typeof y);
