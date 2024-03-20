@@ -10,8 +10,8 @@ console.log(newarray);
 
 // array methods
 
-newarray.push(7); //adds a value at last
-console.log(newarray);
+// newarray.push(7); //adds a value at last
+// console.log(newarray);
 
 newarray.pop(); //pop will automatically remove the last value of the array.it doesn't take any value.
 console.log(newarray);
