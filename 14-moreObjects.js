@@ -2,7 +2,7 @@
 
 const foo = new Object(); //this syntax will create an object in the memory but it will be a singleton object.
 
-const bar = {}; //this syntax will create an object in the memory but it will be a singleton object.
+const bar = {}; //this syntax will create an object in the memory but it will not be a singleton object.
 
 const baz = Object.create({}); //this syntax will create an object in the memory but it will be a singleton object.
 
