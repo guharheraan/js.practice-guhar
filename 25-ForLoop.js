@@ -58,13 +58,22 @@
 
 // ------------------ the CONTINUE ----------------------------
 
-for (let i = 0; i <= 10; i++) {
-  if (i === 4) {
-    console.log(`detected number 4 boss!`);
-    console.log(
-      `its a defected product but the production is continueing no problem!`
-    );
-    continue;
-  }
-  console.log(`The current value is : ${i}`);
+// for (let i = 0; i <= 10; i++) {
+//   if (i === 4) {
+//     console.log(`detected number 4 boss!`);
+//     console.log(
+//       `its a defected product but the production is continueing no problem!`
+//     );
+//     continue;
+//   }
+//   console.log(`The current value is : ${i}`);
+// }
+
+// let's try the for loop on an array
+
+let myArr = ['guhar', 'heraan', 'muzamil'];
+console.log(myArr.length);
+for (let i = 0; i < myArr.length; i++) {
+  const element = myArr[i];
+  console.log(element);
 }
