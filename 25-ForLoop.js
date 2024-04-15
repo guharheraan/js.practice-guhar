@@ -47,14 +47,14 @@
 
 // ----------------- the BREAK ----------------------------------
 
-// for (let i = 0; i <= 10; i++) {
-//   if (i === 4) {
-//     console.log(`detected number 4 boss!`);
-//     console.log(`the program is being break now relax everyone!`);
-//     break;
-//   }
-//   console.log(`The current value is : ${i}`);
-// }
+for (let i = 0; i <= 10; i++) {
+  if (i === 4) {
+    console.log(`detected number 4 boss!`);
+    console.log(`the program is being break now relax everyone!`);
+    break;
+  }
+  console.log(`The current value is : ${i}`);
+}
 
 // ------------------ the CONTINUE ----------------------------
 
@@ -71,9 +71,9 @@
 
 // let's try the for loop on an array
 
-let myArr = ['guhar', 'heraan', 'muzamil'];
-console.log(myArr.length);
-for (let i = 0; i < myArr.length; i++) {
-  const element = myArr[i];
-  console.log(element);
-}
+// let myArr = ['guhar', 'heraan', 'muzamil'];
+// console.log(myArr.length);
+// for (let i = 0; i < myArr.length; i++) {
+//   const element = myArr[i];
+//   console.log(element);
+// }
