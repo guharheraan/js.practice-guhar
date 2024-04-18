@@ -1,9 +1,7 @@
 const btns = document.querySelectorAll('.btn');
 const body = document.querySelector('body');
 
-// console.log(btns);
 btns.forEach(function (btn) {
-  //   console.log(btn);
   btn.addEventListener('click', function (a) {
     console.log(a);
     console.log(a.target);
