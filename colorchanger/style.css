@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  background-color: #212121;
+  text-align: center;
+  color: #fff;
+}
+
+.btns {
+  margin: 20px auto;
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.btns .btn {
+  width: 100px;
+  height: 80px;
+  border-radius: 15px;
+}
+.btns #grey {
+  background-color: #808080;
+}
+.btns #green {
+  background-color: #adff2f;
+}
+
+.btns #blue {
+  background-color: #6c6cf8;
+}
+
+.btns #yellow {
+  background-color: #ffff00;
+}
+
+.btns #grandient {
+  background: linear-gradient(
+    -224deg,
+    rgba(253, 71, 102, 1) 0%,
+    rgba(134, 137, 174, 1) 49%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
