@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom intro</title>
+  </head>
+  <body>
+    <h1 class="heading" id="h1-id">this is intro</h1>
+    <p class="paraghraph">Lorem ipsum dolor sit amet.</p>
+
+    <div class="week">
+      <div class="day">monday</div>
+      <div class="day">tuesday</div>
+      <div class="day">wednesday</div>
+      <div class="day">thirsday</div>
+      <div class="day">friday</div>
+      <div class="day">saturday</div>
+      <div class="day">sunday</div>
+    </div>
+  </body>
+  <script>
+    // const main = document.querySelector('.week');
+    // console.log(main);
+    // console.log(main.children); //show all the childs of the parent.
+    // console.log(main.children[2]); //access a specific child.
+
+    // for (let i = 0; i < main.children.length; i++) {
+    //   console.log(main.children[i].innerHTML);
+    // }
+
+    //here we are access the childs of a parent but we can aslo do vice versa.
+    // main.children[1].style.color = 'green'; //change style of a child element.
+    // console.log(main.firstElementChild); //access the fist child.
+    // console.log(main.lastElementChild); //access the last child.
+
+    //accesssing the parent of a child and its siblings.
+    // const days = document.querySelector('.day');
+    // console.log(days); //we got access of the first child of the parent div.
+    // console.log(days.parentElement); //accessing the parent.
+    // console.log(days.nextElementSibling); //accessing next sibling.
+
+    // childnodes and childNodes
+    // const main = document.querySelector('.week');
+    // console.log('nodes : ', main.childNodes);
+
+    const createDiv = document.createElement('div');
+    console.log(createDiv);
+    createDiv.className = 'c-div';
+    createDiv.id = 'this-id';
+    // createDiv.id = Math.round(math.random() * 10 + 1);
+    createDiv.setAttribute('title', 'my title');
+    createDiv.style.backgroundColor = '#212121';
+    createDiv.style.padding = '10px';
+    createDiv.style.color = '#fff';
+    // createDiv.innerHTML = 'guhar heraan'; //write somthing in the div.
+
+    const addText = document.createTextNode('muzamil khan');
+    createDiv.appendChild(addText);
+
+    document.body.appendChild(createDiv);
+  </script>
+</html>
