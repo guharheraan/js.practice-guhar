@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>events</title>
+    <style>
+      body {
+        background-color: #414141;
+        color: #fff;
+      }
+
+      div ul li img {
+        width: 100px;
+        height: 100px;
+      }
+
+      div ul li a {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- lets start learning about events here. -->
+
+    <h2>images on google</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img src="./Profile picture (1).png" alt="" id="grey-bg" />
+        </li>
+        <li>
+          <img src="./Profile picture.png" alt="" id="mountain" />
+        </li>
+        <li>
+          <img src="./profile-pic (2).png" alt="" id="snow" />
+        </li>
+        <li>
+          <img src="./profile-pic.png" alt="" id="girl" />
+        </li>
+        <li>
+          <img src="./rsz_64871_muzamil.jpg" alt="" id="flower" />
+          <!-- <img src="../rsz_64871_muzamil.jpg" alt="" id="flower" onclick="flower"> 
+            we can write onclick event this way but its not a good approch it shows problem in scalability of the app.   -->
+        </li>
+        <li id="pexel"><a href="https://www.pexels.com/">pexel</a></li>
+      </ul>
+    </div>
+  </body>
+  <!-- usually all the events in js are run sequencially but there are exception. -->
+  <script>
+    // we can write the onclick event this way also.
+    // document.getElementById('flower').onclick = function () {
+    //   alert('flower clicked.'); //this method also works but its still not recommended as new and advanced method have be arrived
+    //   //we will use them instead.
+    // };
+
+    // //instead of onclick event we can use the addEventListener as it can provide us many more things alongside listening to the event.
+
+    // document.getElementById('mountain').addEventListener('click', function () {
+    //   alert('mountain is clicked this time.'); //now this is the most advance method to write the event.
+    // });
+
+    //we can use the "attachEvent" also but it was used for the internet explorer and it is not recommended to use it.
+    //in jquery we can us the "on" method to write the event.
+
+    // document.getElementById('mountain').addEventListener('click', function () {
+    //   alert('mountain is clicked this time.'); //this will return us an object that has alot of thing within it.
+    //   //   we will learn about these methods provided by this object on the go.
+    // });
+
+    // most common methods to learn about are : type,timestamp,preventdefault, target , srcElement,currentTarget,toElement,altkey,ctrlkey,shiftkey,keycode etc.
+
+    //now lets see what is event "propogation" in js.
+    // we usually have 2 scenarios in event propogation 1:event bubbling 2:event capturing.
+    // event bubbling is the default behaviour of the event propogation.
+    // event capturing is the opposite of event bubbling.
+
+    //now we have access the main div of the images and applied the click function on it and we also have accessed the flower img.
+    // if we click on any image it will print the "clicked inside the images."
+    //  but if we click on the flower img it will print the ""clicked the flower img."
+    // as flower img is also inside the images div so we will see which one gets clicked first.
+
+    // in event bubbling the event propogation starts from an element inside a parent element and goes up to the parent element.
+    // that why we use the third parameter "false" with the addEventListener method and bydefault it remains "false" so many people dont write it explicitly.
+
+    // document.getElementById('images').addEventListener(
+    //   'click',
+    //   function (e) {
+    //     console.log('clicked inside the images div.');
+    //   },
+    //   false
+    // );
+
+    // document.getElementById('flower').addEventListener(
+    //   'click',
+    //   function () {
+    //     console.log('clicked the flower img.');
+    //   },
+    //   false
+    // );
+
+    // But if we change the third parameter to "true" then the event propogation will start from the parent element and goes down to the child element.
+    // document.getElementById('images').addEventListener(
+    //   'click',
+    //   function (e) {
+    //     console.log('clicked inside the images div.');
+    //     e.stopPropagation(); //we can change and stop the propagation of this event.
+    //   },
+    //   true
+    // );
+
+    // document.getElementById('flower').addEventListener(
+    //   'click',
+    //   function () {
+    //     console.log('clicked the flower img.');
+    //   },
+    //   true
+    // );
+
+    // document.getElementById('pexel').addEventListener(
+    //   'click',
+    //   function (e) {
+    //     console.log('clicked the button');
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //   },
+    //   false
+    // );
+    // usually the event bubbling method is used mostly but there are some scenarios that requires the event capturing method.
+
+    // now let's try it on realworld case like
+    // we want to remove the image that is clicked which means any img that gets clicked will get removed.
+    document.getElementById('images').addEventListener('click', function (e) {
+      //   console.log(e);
+      //   console.log(e.target.parentNode); //through this we can access the parent node of a childnode.
+      //   console.log(e.target.id); //we can access the id of a particular element.
+      //   console.log(e.target.tagName); //we can access the tagNames available inside an element.
+      if (e.target.tagName === 'IMG') {
+        //here we will check if the tagname is IMG then remove it otherwise not.
+        let removePic = e.target.parentNode; //we are accessing the parent element bcz if we just remove the img inside the tag it will
+        // leave a dot "." circle behind so we are removing the parent element.
+
+        // console.log(e.target.id);
+        removePic.remove();
+
+        // we also remove the child through this way.
+        // removePic.parentNode.removeChild(removePic);
+      }
+    });
+  </script>
+</html>
