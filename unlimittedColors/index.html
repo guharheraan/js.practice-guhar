@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>colors</title>
+  </head>
+  <body>
+    <h1>
+      click to start changing the colors on your screen and click stop to stop
+      it.
+    </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    //first we will create a random color
+
+    const randomColor = function () {
+      const hex = '0123456789ABCDEF'; //range of the hexa values that we will use.
+      let color = '#';
+
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)]; //it will provide us with a random hexa coded color.
+      }
+      return color;
+    };
+
+    // console.log(randomColor());
+
+    let changer;
+
+    const startChangingColor = function () {
+      const changeColor = function () {
+        document.body.style.backgroundColor = randomColor(); //assigning a random color to the body of the document.
+      };
+      if (!changer) {
+        //here we will check if the changer variable is empty then we will add a random color to it if not we won't add any color.
+        changer = setInterval(changeColor, 1000);
+      }
+    };
+    const stopChangingcolor = function () {
+      changer = clearInterval(changer); //when stop button is clicked it will clear the setInterval.
+
+      //we will empty the null variable so that when the loop restarts it will be filled with another random color.
+      changer = null; //we put null into the changer to save some memory. it is not necessary but it is good practice.
+    };
+
+    document
+      .getElementById('start')
+      .addEventListener('click', startChangingColor); //adding an event listener to the start button.
+    document
+      .getElementById('stop')
+      .addEventListener('click', stopChangingcolor); //adding an event listener to the stop button.
+  </script>
+</html>
