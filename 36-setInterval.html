@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set interval and clear interval</title>
+  </head>
+  <body>
+    <h1>hi its guhar heraan</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    //the setInterval is used when we want to do somthing repeatidly for a certain time
+    //the clearInterval is used to stop the setInterval
+
+    const myName = setInterval(function () {
+      //this function can take arguments also.
+      console.log('guhar', Date.now());
+    }, 2000);
+
+    //the clearInterval is used to stop or clear the set interval function.
+    clearInterval(myName);
+
+    //passing some arguments in this function also works
+    const anyName = function (str) {
+      console.log('your name is : ', str);
+    };
+    const yourName = setInterval(anyName, 5000, 'hi');
+
+    clearInterval(yourName);
+
+    //now let's try a practical example
+
+    //when we click the start button it should start print my name and when we click the stop it should stop.
+
+    document.querySelector('#start').addEventListener('click', function () {
+      const Name = function (str) {
+        console.log('your name is : ', str);
+      };
+
+      const printName = setInterval(Name, 2000, 'guhar');
+
+      document.querySelector('#stop').addEventListener('click', function () {
+        //here we are passing the setInterval function name as a argument.
+        clearInterval(printName);
+      });
+    });
+  </script>
+</html>
