@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>set time out</title>
+  </head>
+  <body>
+    <h1 id="heading">hello world!</h1>
+    <button id="btn">stop</button>
+  </body>
+  <script>
+    //this means that it takes any argument and do anything with it after a specified time
+    //but whatever it is doing will only be done only once.
+    // setTimeout(function () {
+    //   console.log('hi guhar.');
+    // }, 1000);
+
+    // //we can define a function and pass it to the setTimeout function
+    // //and it will be called after the specified time
+    // function sayHi() {
+    //   console.log('hi heraan.');
+    // }
+    // const sayMyName = setTimeout(sayHi, 2000); //here we will only pass the reference of that function, we won't execite it.
+
+    // //we can clear the set time out function also
+    // //for clearing a setTimeout function we need to hold it in a variable so that it can be passed to cleatTimeout.
+    // clearTimeout(sayMyName); //it takes a reference of a setTimeout and clears that.
+
+    //now let's try it on the real scenario
+
+    const getText = function () {
+      const h1 = document.getElementById('heading');
+      h1.innerHTML = 'guhar heraan';
+    };
+
+    const changeText = setTimeout(getText, 5000);
+
+    //now to stop this from changing the text we have a button if it gets clicked this will stop the changeText function from executing.
+
+    document.querySelector('#btn').addEventListener('click', function () {
+      clearTimeout(changeText);
+      console.log('event stopped.');
+    });
+  </script>
+</html>
